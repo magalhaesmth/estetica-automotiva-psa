@@ -8,3 +8,5 @@ abstract class InterfaceAgendamento {
 
   bool validarSemMaoDeObra({required Servico servico});
 }
+
+//Polimorfismo se utiliza aqui
