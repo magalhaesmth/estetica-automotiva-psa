@@ -12,4 +12,25 @@ class Servico {
   late Pagamento pagamento = Pagamento();
   late bool veiculoEntregue;
   late bool especialistaDisponivel;
+
+  @override
+  bool validarServicosCustos(
+      {required Procedimento procedimento, required Pagamento pagamento}) {
+    if (procedimento.valor + procedimento.taxaMaoDeObra ==
+        pagamento.valorServico) {
+      return true;
+    }
+    throw Exception("Valor Incorreto");
+  }
+
+  @override
+  double validarEntregaAposPagamento({required Servico servico}) {
+    if (servico.pagamento.valorServico <= 0.0) {
+      throw Exception(
+          "O veiculo não pode ser entregue pois ainda não foi pago");
+    } else {
+      servico.veiculoEntregue = false;
+      return servico.pagamento.valorServico;
+    }
+  }
 }
