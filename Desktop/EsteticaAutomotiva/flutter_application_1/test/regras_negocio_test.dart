@@ -49,15 +49,22 @@ void main() {
   procedimento.tempoGasto = 3;
 
   // 1
-  test("Para realizar o serviço, o cliente deve informar o CPF corretamente",
+  test("Para realizar o serviço, o cliente deve informar os numeros do CPF corretamente",
       () {
     expect(cliente.validarCpf(cliente.cpf), true);
+
+    cliente.cpf = '41254354312';
+    expect(cliente.validarCpf(cliente.cpf), false);
   });
 
   // 2
   test("Para realizar o serviço, o veiculo deve conter placa e modelo", () {
     expect(veiculo.validarPlacaModelo(veiculo: veiculo), true);
-  });
+
+    veiculo.modelo = "";
+    veiculo.placa = "";
+    expect(veiculo.validarPlacaModelo(veiculo: veiculo), throwsException);
+  }); //arrumar
 
   // 3
   test("O serviço só poderá ser agendado com a placa e CPF do cliente válidos",
@@ -67,7 +74,7 @@ void main() {
   });
 
   // 4
-  test("Deverá calcular serviço + custos", () {
+  test("Deverá calcular procedimento + mão de obra", () {
     expect(
         servico.validarServicosCustos(
             procedimento: procedimento, pagamento: pagamento),
@@ -91,6 +98,10 @@ void main() {
     pagamento.formaPagamento = 'Parcelado em 3X';
     expect(
         pagamento.parcelasPagamento(pagamento: pagamento), 'Parcelado em 3X');
+
+    pagamento.formaPagamento = 'Parcelado em 4X';
+    expect(
+        pagamento.parcelasPagamento(pagamento: pagamento), 'Parcelado em 4X');
   });
 
   // 7
@@ -118,6 +129,6 @@ void main() {
     expect(
         procedimento.validarCustos(
             procedimento: procedimento, pagamento: pagamento),
-        "310,00 Reais");
+        "${pagamento.valorServico}");
   });
 }

@@ -27,8 +27,8 @@ class Procedimento {
       {required Procedimento procedimento, required Pagamento pagamento}) {
     if (procedimento.valor + procedimento.taxaMaoDeObra ==
         pagamento.valorServico) {
-      print("R\$310,00");
-      return "310,00 Reais";
+      print("R\$ ${pagamento.valorServico}");
+      return "${pagamento.valorServico}";
     }
     throw Exception("Valor Incorreto");
   }
