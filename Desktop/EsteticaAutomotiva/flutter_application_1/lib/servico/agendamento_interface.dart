@@ -6,7 +6,5 @@ import 'package:flutter_application_1/modelo/veiculo.dart';
 abstract class InterfaceAgendamento {
   bool validarPlacaCPF({required Veiculo veiculo, required Cliente cliente});
 
-  bool validarSemMaoDeObra({required Servico servico});
+  bool temMaoDeObraDisponivel({required Servico servico});
 }
-
-//Polimorfismo se utiliza aqui

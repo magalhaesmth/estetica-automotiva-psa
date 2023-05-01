@@ -14,14 +14,24 @@ class Servico {
   late bool especialistaDisponivel;
 
   @override
-  bool validarServicosCustos(
+  bool calcularProcedimentoMaoDeObra(
       {required Procedimento procedimento, required Pagamento pagamento}) {
+    if (procedimento.valor < 0 &&
+        procedimento.taxaMaoDeObra < 0 &&
+        pagamento.valorServico < 0) {
+      throw Exception("Valor não pode ser negativo!");
+    }
+
     if (procedimento.valor + procedimento.taxaMaoDeObra ==
         pagamento.valorServico) {
+      print("Valor incorreto!");
       return true;
     }
     throw Exception("Valor Incorreto");
   }
+
+  // @override
+  // bool verificarCalculoMenor()
 
   @override
   double validarEntregaAposPagamento({required Servico servico}) {
@@ -29,7 +39,8 @@ class Servico {
       throw Exception(
           "O veiculo não pode ser entregue pois ainda não foi pago");
     } else {
-      servico.veiculoEntregue = false;
+      print("O veiculo foi entregue!");
+      servico.veiculoEntregue = true;
       return servico.pagamento.valorServico;
     }
   }

@@ -15,11 +15,12 @@ class Agendamento implements InterfaceAgendamento {
       print("Placa e CPF válidos para o agendamento");
       return true;
     }
+    print("Placa e CPF do cliente não são válidos.");
     throw Exception("Placa e CPF do cliente não são válidos.");
   }
 
   @override
-  bool validarSemMaoDeObra({required Servico servico}) {
+  bool temMaoDeObraDisponivel({required Servico servico}) {
     if (servico.especialistaDisponivel) {
       var agendamento = Agendamento();
       agendamento.dataAgendamento = DateTime(2023, DateTime.april, 04, 27, 23);

@@ -11,11 +11,14 @@ class Procedimento {
 
   @override
   bool estimativaDataEntrega({required Procedimento procedimento}) {
-    if (procedimento.tempoGasto < 10) {
-      DateTime now = DateTime.now();
+    DateTime now = DateTime.now();
+    if (procedimento.tempoGasto < 8) {
       DateTime dataEntrega = now.add(Duration(hours: procedimento.tempoGasto));
       String dataFormatada = DateFormat('dd/MM/yyyy').format(dataEntrega);
       String tempoFormatado = DateFormat('HH:mm').format(dataEntrega);
+      if (dataEntrega.hour > 18) {
+        throw Exception("O seu veiculo só estara pronto no dia seguinte!");
+      }
       print(
           "Seu veículo estará pronto às $tempoFormatado do dia $dataFormatada");
       return true;
@@ -30,6 +33,7 @@ class Procedimento {
       print("R\$ ${pagamento.valorServico}");
       return "${pagamento.valorServico}";
     }
+    print("Valor Incorreto");
     throw Exception("Valor Incorreto");
   }
 }

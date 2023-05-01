@@ -8,8 +8,11 @@ class Cliente extends Pessoa implements InterfaceCliente {
   @override
   bool validarFidelidade({required Cliente cliente}) {
     if (cliente.quantidadeProcedimentos == 10) {
+      print("Proxima lavagem será gratuita!");
       return cliente.proximoProcedimentoGratis = true;
     }
+    print(
+        "Faltam ${10 - cliente.quantidadeProcedimentos} lavagens ou outros serviços");
     throw Exception(
         "Faltam ${10 - cliente.quantidadeProcedimentos} lavagens ou outros serviços");
   }
