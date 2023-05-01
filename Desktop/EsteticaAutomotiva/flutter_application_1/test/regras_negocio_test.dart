@@ -153,26 +153,26 @@ void main() {
   test("O veículo só poderá ser entregue após pagamento", () {
     servico.pagamento.valorServico = 0.0;
     servico.veiculoEntregue = false;
-    expect(() => servico.validarEntregaAposPagamento(servico: servico),
-        throwsException);
+    expect(
+        () => servico.entregaAposPagamento(servico: servico), throwsException);
 
     //Testa se foi pago o serviço, o veiculo é entregue
     servico.pagamento.valorServico = 310.0;
     servico.veiculoEntregue = false;
-    expect(servico.validarEntregaAposPagamento(servico: servico), 310.0);
+    expect(servico.entregaAposPagamento(servico: servico), 310.0);
   });
 
 //10
   test("Deve apresentar a soma total do serviço", () {
     expect(
-        procedimento.validarCustos(
+        procedimento.mostrarCustos(
             procedimento: procedimento, pagamento: pagamento),
         "${pagamento.valorServico}");
 
     //Testa a entrega do valor do serviço, se for errado ou não.
     pagamento.valorServico = 100.0;
     expect(
-        () => procedimento.validarCustos(
+        () => procedimento.mostrarCustos(
             procedimento: procedimento, pagamento: pagamento),
         throwsException);
   });

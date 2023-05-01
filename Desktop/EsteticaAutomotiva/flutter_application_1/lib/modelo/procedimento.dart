@@ -26,7 +26,7 @@ class Procedimento {
     return false;
   }
 
-  String validarCustos(
+  String mostrarCustos(
       {required Procedimento procedimento, required Pagamento pagamento}) {
     if (procedimento.valor + procedimento.taxaMaoDeObra ==
         pagamento.valorServico) {

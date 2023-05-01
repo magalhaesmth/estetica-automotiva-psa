@@ -34,7 +34,7 @@ class Servico {
   // bool verificarCalculoMenor()
 
   @override
-  double validarEntregaAposPagamento({required Servico servico}) {
+  double entregaAposPagamento({required Servico servico}) {
     if (servico.pagamento.valorServico <= 0.0) {
       throw Exception(
           "O veiculo não pode ser entregue pois ainda não foi pago");

@@ -6,5 +6,5 @@ abstract class InterfaceServico {
   bool validarServicosCustos(
       {required Procedimento procedimento, required Pagamento pagamento});
 
-  double validarEntregaAposPagamento({required Servico servico});
+  double entregaAposPagamento({required Servico servico});
 }

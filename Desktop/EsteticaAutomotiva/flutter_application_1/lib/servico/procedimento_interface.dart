@@ -4,6 +4,6 @@ import 'package:flutter_application_1/modelo/procedimento.dart';
 abstract class InterfaceProcedimento {
   bool estimativaDataEntrega({required Procedimento procedimento});
 
-  String validarCustos(
+  String mostrarCustos(
       {required Procedimento procedimento, required Pagamento pagamento});
 }
