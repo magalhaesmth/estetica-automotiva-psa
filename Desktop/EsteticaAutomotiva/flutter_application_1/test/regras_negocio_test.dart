@@ -177,3 +177,16 @@ void main() {
         throwsException);
   });
 }
+
+
+//S do Solid: cada classe: Agendamento, Cliente.... tem uma única responsabilidade.
+
+//O do Solid: As classes Cliente, Veiculo, Pagamento, Servico... estão fechadas para modificação, mas abertas para extensão.
+//Isso significa que, se novos comportamentos ou propriedades precisarem ser adicionados, eles podem ser adicionados por meio de herança ou composição, sem alterar o código existente.
+
+//L do Solid: as subclasses (se houver) podem ser substituídas pelas classes base, sem afetar o comportamento do programa.
+//As classes derivadas estão sendo usadas para os testes, fornecendo outros valores para testar o erro.
+
+//I do Solid: as classes têm apenas os métodos que precisam ser implementados, sem métodos desnecessários, cada classe com sua interface devidamente.
+
+//D do Solid: as classes dependem de abstrações e não de implementações concretas. Cada classe é abstrata, porém se relacionam uma com as outras.
