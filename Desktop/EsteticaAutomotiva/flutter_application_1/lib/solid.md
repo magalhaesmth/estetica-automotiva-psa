@@ -33,3 +33,21 @@ __Dependency Inversion Principle__: classes de alto nível devem depender de int
 ___
 
 A aplicação desses princípios pode ajudar a tornar o software mais fácil de entender, manter, testar e evoluir ao longo do tempo.
+
+___
+
+## __Utilização do SOLID__
+
+__S do Solid:__ cada classe: Agendamento, Cliente.... tem uma única responsabilidade.
+
+__O do Solid:__ As classes Cliente, Veiculo, Pagamento, Servico... estão fechadas para modificação, mas abertas para extensão.
+Isso significa que, se novos comportamentos ou propriedades precisarem ser adicionados, eles podem ser adicionados por meio de herança ou composição, sem alterar o código existente.
+
+__L do Solid:__ as subclasses (se houver) podem ser substituídas pelas classes base, sem afetar o comportamento do programa.
+As classes derivadas estão sendo usadas para os testes, fornecendo outros valores para testar o erro.
+
+__I do Solid:__ as classes têm apenas os métodos que precisam ser implementados, sem métodos desnecessários, cada classe com sua interface devidamente.
+
+__D do Solid:__ as classes dependem de abstrações e não de implementações concretas. Cada classe é abstrata, porém se relacionam uma com as outras.
+
+
