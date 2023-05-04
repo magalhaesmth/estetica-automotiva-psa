@@ -178,6 +178,7 @@ void main() {
   });
 }
 
+//SOLID
 
 //S do Solid: cada classe: Agendamento, Cliente.... tem uma única responsabilidade.
 
@@ -190,3 +191,15 @@ void main() {
 //I do Solid: as classes têm apenas os métodos que precisam ser implementados, sem métodos desnecessários, cada classe com sua interface devidamente.
 
 //D do Solid: as classes dependem de abstrações e não de implementações concretas. Cada classe é abstrata, porém se relacionam uma com as outras.
+
+//POO
+
+//Encapsulamento: foi utilizado em todas as classes, para garantir o acesso controlado aos atributos e métodos.
+//Ex: classes Cliente, Veiculo, Pagamento, Servico, Procedimento e Agendamento possuem atributos privados que só podem ser acessados por meio de métodos públicos.
+
+//Abstração: foi utilizada em todas as classes, para definir objetos com propriedades e comportamentos comuns.
+// Ex: classe Servico abstrai o serviço que será prestado ao cliente, e pode ser instanciada com diferentes valores para cada atributo, dependendo das necessidades.
+
+//Herança: foi utilizado extendendo a classe Pessoa para utilizar o CPF na classe Cliente.
+
+//Polimorfismo: foi utilizado nas interfaces de cada classe.
